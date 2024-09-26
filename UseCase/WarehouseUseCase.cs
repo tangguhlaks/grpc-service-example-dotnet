@@ -3,6 +3,8 @@ using Grpc.Core;
 using GrpcServiceExample.Model;
 using GrpcServiceExample.Protos;
 using GrpcServiceExample.Repositories;
+using GrpcServiceExample.Repositories.db;
+using Org.BouncyCastle.Asn1.Ocsp;
 using Org.BouncyCastle.Crypto;
 
 namespace GrpcServiceExample.UseCase
@@ -11,6 +13,7 @@ namespace GrpcServiceExample.UseCase
     {
         Task<Protos.WarehouseResponse> Add(Protos.WarehouseModel o,ServerCallContext context);
         Task<Protos.WarehouseResponseGetList> GetList(Protos.Empty o, ServerCallContext context);
+        Task<Protos.WarehouseResponseGetById> GetById(Protos.WarehouseGetReq o, ServerCallContext context);
     }
     public class WarehouseUseCase : IWarehouseUseCase
     {
@@ -32,13 +35,29 @@ namespace GrpcServiceExample.UseCase
                 return Task.FromResult(new WarehouseResponse { Message = "Success" });
             }
             catch (Exception ex) {
-                throw;
+                return Task.FromResult(new WarehouseResponse { Message = "Failed " });
             }
         }
 
         Task<WarehouseResponseGetList> IWarehouseUseCase.GetList(Empty o, ServerCallContext context)
         {
-            throw new NotImplementedException();
+            var res = _repository.db().GetWarehouse();
+            var warehouseList = _mapper.Map<IEnumerable<WarehouseModel>>(res);
+            var response = new WarehouseResponseGetList();
+            response.Warehouses.AddRange(warehouseList);
+            return Task.FromResult(response);
+        }
+
+
+        Task<WarehouseResponseGetById> IWarehouseUseCase.GetById(WarehouseGetReq o, ServerCallContext context)
+        {
+            var res = _repository.db().GetWarehouseById(o.Id);
+            if (res == null)
+            {
+                throw new RpcException(new Status(StatusCode.NotFound, $"Warehouse with ID {o.Id} not found"));
+            }
+            var warehouse = _mapper.Map<WarehouseModel>(res);
+            return Task.FromResult(new WarehouseResponseGetById { Warehouses =warehouse });
         }
     }
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NXyjam+EGXcap+xsCGcn4sSzat45fJe+L19adJSpPoT2EZD+hqMOS5CtLbx4ddrKGxUbeyiq24E9q4zRx8b3jQ==",
+  "dgSpecHash": "M1v2nk0KApcpSaS+gB8wCdLiKGp2snoBCXpPD/DLaGgfae95Z7+GHZjZxzPjJqWtMmjI6u+zQtWhDDFLX4T9UQ==",
   "success": true,
   "projectFilePath": "C:\\Learn\\GrpcServiceExample\\GrpcServiceExample.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tangguh laksana\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\tangguh laksana\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\tangguh laksana\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
@@ -19,6 +20,7 @@
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\tangguh laksana\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\tangguh laksana\\.nuget\\packages\\microsoft.extensions.http\\6.0.0\\microsoft.extensions.http.6.0.0.nupkg.sha512",
