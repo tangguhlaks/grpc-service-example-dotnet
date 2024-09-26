@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceExample.Protos";
+
+
+message WarehouseModel{
+	int32 id = 1;
+	string code = 2;
+	string name = 3;
+}
+
+message WarehouseGetReq{
+	int32 id = 1;
+}
+
+message WarehouseResponse{
+	string message = 1;
+}
+message WarehouseResponseGetList{
+	repeated WarehouseModel warehouses = 1;
+}
+message WarehouseResponseGetById{
+	WarehouseModel warehouses = 1;
+}
+
+message Empty{}
+service WarehouseService{
+	rpc Add(WarehouseModel) returns (WarehouseResponse);
+	rpc GetList(Empty) returns (WarehouseResponseGetList);
+	rpc GetById(WarehouseGetReq) returns (WarehouseResponseGetById);
+}
